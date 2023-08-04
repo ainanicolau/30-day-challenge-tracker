@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Day from './Day';
+import data from './data.json';
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -14,14 +15,13 @@ function App() {
 
   // Create a sample data structure for the tasks
   const initializeTasks = () => {
-    const newTasks = [];
-    for (let i = 0; i < 30; i++) {
-      const dayTasks = [];
-      for (let j = 0; j < 3; j++) {
-        dayTasks.push({ name: `Task ${j + 1}`, completed: false });
-      }
-      newTasks.push(dayTasks);
-    }
+    const newTasks = data.map(dayData => {
+      const tasksArray = Object.values(dayData)[0];
+      return tasksArray.map(taskData => ({
+        name: taskData,
+        completed: false,
+      }));
+    });
     setTasks(newTasks);
   };
 
