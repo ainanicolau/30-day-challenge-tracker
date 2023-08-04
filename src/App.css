@@ -27,7 +27,7 @@ body {
 }
 
 .day {
-  border: 2px solid #ba4b2f; /* Dark color */
+  border: 1px solid #ba4b2f; /* Dark color */
   padding: 20px;
   margin: 10px;
   border-radius: 20px;
@@ -58,10 +58,45 @@ body {
   align-items: center;
 }
 
-input[type="checkbox"] {
+.checkbox-container {
+  position: relative;
+  padding-left: 35px; /* Adjust based on your design */
   margin-right: 10px;
-  accent-color: #ba4b2f; /* Dark color */
-  font: inherit;
-  width: 1.15em;
+  cursor: pointer;
+}
+
+.checkbox-container input[type="checkbox"] {
+  display: none;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 1.15em;
+  width: 1.15em;
+  background-color: #fdf3dd; /* Light color */
+  border: 1px solid #ba4b2f; /* Dark color */
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.checkbox-container input[type="checkbox"]:checked + .checkmark {
+  background-color: #ba4b2f; /* Dark color */
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input[type="checkbox"]:checked + .checkmark:after {
+  display: block;
+  content: "\2713"; /* Unicode code for checkmark */
+  font-size: 1em;
+  color: #fdf3dd; /* Light color */
+  text-align: center;
+  line-height: 1.15em; /* Vertically center the checkmark */
+  inline-size: -webkit-fill-available;
 }

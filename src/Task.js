@@ -8,12 +8,14 @@ function Task({ dayIndex, taskIndex, task, updateTasks }) {
   return (
     <div className={`task ${task.completed ? 'completed' : ''}`}>
       <label>
-        <input
-          type="checkbox"
-          checked={task.completed}
-          onChange={handleCheckboxChange}
-        />
-        <span className="checkbox-custom"></span>
+        <label class="checkbox-container">
+          <input
+            type="checkbox"
+            checked={task.completed}
+            onChange={handleCheckboxChange}
+          />
+          <span class="checkmark"></span>
+        </label>
         {task.name}
       </label>
     </div>
