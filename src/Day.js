@@ -25,7 +25,7 @@ function Day({ dayIndex, tasks, updateTasks }) {
       </div>
       {isOddRow && (
         <div className="image-container">
-          <img src="logo192.png" alt="Image" />
+          <img src="img.svg" alt="Image" />
         </div>
       )}
     </div>
