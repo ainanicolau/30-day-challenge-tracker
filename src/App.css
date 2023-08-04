@@ -5,15 +5,11 @@ body {
   justify-content: center;
   align-items: center;
   color: #ba4b2f; /* Dark color */
+  font-family: 'Montaga', sans-serif;
 }
 
 .App {
   text-align: center;
-}
-
-.app-title {
-  font-family: 'DM Sans', sans-serif;
-  color: #fdf3dd; /* Light color */
 }
 
 .day {
@@ -37,6 +33,7 @@ body {
 }
 
 .task {
+  font-family: 'DM Sans', sans-serif;
   display: flex;
   align-items: center;
 }
