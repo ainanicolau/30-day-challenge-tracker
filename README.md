@@ -20,17 +20,17 @@ A simple React web application to track your 30-day fitness challenge progress. 
 ### Installation
 
 1. Clone the repository:
-   ```sh
+   ```
    git clone https://github.com/ainanicolau/30-day-challenge-tracker.git
    ```
 
 2. Navigate to the project directory:
-   ```sh
+   ```
    cd 30-day-challenge-tracker
    ```
 
 3. Install dependencies:
-   ```sh
+   ```
    npm install
    ```
 
