@@ -25,7 +25,7 @@ function Day({ dayIndex, tasks, updateTasks }) {
       </div>
       {isOddRow && (
         <div className="image-container">
-          <img src="img.svg" alt="Image" />
+          <img src={`images/img${(dayIndex/2)%8}.svg`} alt="Image" />
         </div>
       )}
     </div>
