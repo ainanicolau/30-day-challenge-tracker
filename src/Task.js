@@ -13,6 +13,7 @@ function Task({ dayIndex, taskIndex, task, updateTasks }) {
           checked={task.completed}
           onChange={handleCheckboxChange}
         />
+        <span className="checkbox-custom"></span>
         {task.name}
       </label>
     </div>

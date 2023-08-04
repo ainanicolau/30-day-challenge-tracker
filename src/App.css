@@ -1,15 +1,33 @@
+body {
+  margin: 0;
+  background-color: #fdf3dd; /* Light color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ba4b2f; /* Dark color */
+}
+
 .App {
   text-align: center;
 }
 
-.day {
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin: 10px;
+.app-title {
+  font-family: 'DM Sans', sans-serif;
+  color: #fdf3dd; /* Light color */
 }
 
-.completed {
-  background-color: lightgreen;
+.day {
+  border: 2px solid #ba4b2f; /* Dark color */
+  padding: 20px;
+  margin: 10px;
+  border-radius: 20px;
+  background-color: #fdf3dd; /* Light color */
+  transition: background-color 0.3s;
+}
+
+.day.completed {
+  background-color: #ba4b2f; /* Dark color */
+  color: #fdf3dd; /* Light color */
 }
 
 .tasks {
@@ -25,4 +43,8 @@
 
 input[type="checkbox"] {
   margin-right: 10px;
+  accent-color: #ba4b2f; /* Dark color */
+  font: inherit;
+  width: 1.15em;
+  height: 1.15em;
 }
