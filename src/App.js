@@ -25,7 +25,10 @@ function App() {
     setTasks(newTasks);
   };
 
-  // Load tasks from localStorage on component mount and save tasks when they change
+  // Initialize a flag to track if the component is being initialized
+  const [isInitializing, setIsInitializing] = useState(true);
+
+  // Load tasks from localStorage on component mount
   useEffect(() => {
     const savedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
     if (savedTasks.length === 0) {
@@ -33,11 +36,15 @@ function App() {
     } else {
       setTasks(savedTasks);
     }
+    setIsInitializing(false); // Mark initialization as complete
+  }, []);
 
-    if (tasks.length > 0) {
+  // Save tasks to localStorage whenever tasks change, except during initialization
+  useEffect(() => {
+    if (!isInitializing) {
       localStorage.setItem('tasks', JSON.stringify(tasks));
     }
-  }, [tasks]);
+  }, [tasks, isInitializing]);
 
   return (
     <div className="App">
