@@ -41,7 +41,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>30 Day Challenge Tracker</h1>
+      <h1>Repte de 30 dies</h1>
       <div className="days">
         {tasks.map((dayTasks, dayIndex) => (
           <Day

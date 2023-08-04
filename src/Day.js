@@ -7,7 +7,7 @@ function Day({ dayIndex, tasks, updateTasks }) {
   return (
     <div className={`day ${allTasksCompleted ? 'completed' : ''}`}>
       <div className="day-content">
-        <h2>Day {dayIndex + 1}</h2>
+        <h2>Dia {dayIndex + 1}</h2>
         <div className="tasks">
           {tasks.map((task, taskIndex) => (
             <Task
