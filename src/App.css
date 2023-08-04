@@ -1,7 +1,6 @@
 body {
   margin: 5%;
   background-color: #fdf3dd; /* Light color */
-  display: block;
   justify-content: center;
   align-items: center;
   color: #ba4b2f; /* Dark color */
@@ -12,13 +11,12 @@ body {
   text-align: center;
 }
 
-.day {
-  border: 2px solid #ba4b2f; /* Dark color */
-  padding: 20px;
-  margin: 10px;
-  border-radius: 20px;
-  background-color: #fdf3dd; /* Light color */
-  transition: background-color 0.3s;
+.row {
+  display: contents;
+}
+
+.image-container {
+  margin: auto;
 }
 
 /* Update the .days container */
@@ -28,13 +26,19 @@ body {
   gap: 10px; /* Add some gap between cells */
 }
 
-/* Apply styles for alternating rows */
-.day:nth-child(even) {
-  grid-column: 2 / span 2; /* Middle-right columns */
+.day {
+  border: 2px solid #ba4b2f; /* Dark color */
+  padding: 20px;
+  margin: 10px;
+  border-radius: 20px;
+  background-color: #fdf3dd; /* Light color */
+  transition: background-color 0.3s;
+  grid-column: 1 / span 2;
 }
 
-.day:nth-child(odd) {
-  grid-column: 1 / span 2; /* Left-middle columns */
+/* Apply styles for alternating rows */
+.isEvenRow {
+  grid-column: 2 / span 2; /* Middle-right columns */
 }
 
 .day.completed {
