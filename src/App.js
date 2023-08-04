@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Day from './Day';
 import data from './data.json';
@@ -25,10 +25,19 @@ function App() {
     setTasks(newTasks);
   };
 
-  // Initialize tasks on component mount
-  React.useEffect(() => {
-    initializeTasks();
-  }, []);
+  // Load tasks from localStorage on component mount and save tasks when they change
+  useEffect(() => {
+    const savedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    if (savedTasks.length === 0) {
+      initializeTasks();
+    } else {
+      setTasks(savedTasks);
+    }
+
+    if (tasks.length > 0) {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+  }, [tasks]);
 
   return (
     <div className="App">
